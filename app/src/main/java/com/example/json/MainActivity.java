@@ -11,9 +11,6 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
     TextView textView1, textView2;
     String s1 = "{\"employee\":{\"name\":\"Abhishek Saini\",\"salary\":65000}}";
-    String s2;
-    String s3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
         textView2 = findViewById(R.id.t2);
         try {
             JSONObject jsonObject = new JSONObject(s1);
-            JSONObject employee = jsonObject.getJSONObject("employee");
-            s2 = employee.getString("name");
-            s3 = employee.getString("salary");
-            textView1.setText("Name=" + s2);
-            textView2.setText("Salary=" + s3);
+            JSONObject emp = jsonObject.getJSONObject("employee");//using getJsonObject()
+            String s2 = emp.getString("name");
+            String s3 = emp.getString("salary");
+            textView1.setText("Name is:=" + s2);
+            textView2.setText("Salary is:=" + s3);
         } catch (JSONException e) {
             e.printStackTrace();
         }
