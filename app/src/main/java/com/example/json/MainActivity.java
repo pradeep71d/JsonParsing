@@ -11,7 +11,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
     TextView textView1, textView2;
     String s1 = "{\"employee\":{\"name\":\"Abhishek Saini\",\"salary\":65000}}";
-    @Override
+    @Override // Here Json starts with '{' so we are taking json as an object.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
